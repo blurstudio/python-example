@@ -1,0 +1,12 @@
+*.swp
+*.egg-info
+.coverage
+.DS_Store
+.eggs
+.pytest_cache
+__pycache__
+_build
+build/
+dist/
+htmlcov/
+venv/
