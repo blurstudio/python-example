@@ -27,7 +27,7 @@ _Be sure to update the various properties so they pertain to your project._
 - Defines build system characteristics, more specifically those pertaining to `setuptools_scm` which provides automatic versioning based off git repo state.
 - Configures `pytest`.
 
-_The only property that will need updating is the `write_to` destination for the `version.txt`-file._
+_The only property that will need updating is the `write_to` destination for the `version.py`-file._
 
 > _While it would be ideal to fully migrate to `pyproject.toml` there are still several aspects of configuration that have not yet fully migrated to support the finalized [PEP 621] standard._
 
