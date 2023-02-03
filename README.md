@@ -42,11 +42,11 @@ _Keep these up to date with any packages required by the project._
 
 ### flake8
 
-Analyses for a number of common errors and syntactical violations. Configuration is provided by a section in `setup.cfg`.
+Analyses for a number of common errors and syntactical violations. Configuration is provided by a section in `setup.cfg`. For consistency when testing we have pinned the tox and pre-commit versions to `flake8==5.0.4 flake8-bugbear==22.12.6 pep8-naming==0.13.3`.
 
 ### black
 
-Conforms code to a set of opinionated formatting standards.
+Conforms code to a set of opinionated formatting standards. For consistency when testing we have pinned the tox and pre-commit version of black to `black==22.12.0`.
 
 ## Pre-commit Hooks
 
@@ -67,6 +67,12 @@ Before you can start using pre-commit you will need to install it via pip (`pip 
 | [end-of-file-fixer]      | Ensures each file has one newline at the end.                      |
 | [requirements-txt-fixer] | Sorts entries in requirements.txt and removes incorrect entries.   |
 | [trailing-whitespace]    | Trims any trailing whitespace from lines.                          |
+
+For consistency when testing we have pinned the tox and pre-commit versions to `black==22.12.0 flake8==5.0.4 flake8-bugbear==22.12.6 pep8-naming==0.13.3`. When using `pre-commit autoupdate`, do not change those package versions without updating the tox.ini file. To make developing multiple packages easier, changing the pinned versions of these packages should be done for all packages, not just this single package. This way the system python can have these versions installed and ide's that automatically enforce black and flake8 rules are consistent across all projects.
+
+### setup-cfg-fmt
+
+For the moment we are stuck using CentOS for linux workstations which still uses python 3.6. For this reason, we have added `args: [--min-py3-version=3.6]` to the configuration of `setup-cfg-fmt`. Any code intended to(or possibly might) run on user workstations or farm nodes on linux should keep this. This setting keeps the setup.cfg file from being updated to exclude python 3.6. Ideally we can remove python 3.6 requirements in the future.
 
 ## GitHub Action Workflows
 
@@ -94,7 +100,7 @@ Templates for reporting issues (bugs or feature requests) and submitting pull re
 
 [PEP 621]: https://www.python.org/dev/peps/pep-0621/
 [black]: https://github.com/psf/black
-[flake8]: https://gitlab.com/pycqa/flake8
+[flake8]: https://github.com/PyCQA/flake8
 [setup-cfg-fmt]: https://github.com/asottile/setup-cfg-fmt
 [check-json]: https://github.com/pre-commit/pre-commit-hooks#check-json
 [check-toml]: https://github.com/pre-commit/pre-commit-hooks#check-toml

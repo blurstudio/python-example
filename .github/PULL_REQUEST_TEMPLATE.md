@@ -6,7 +6,7 @@
 
 - [ ] I have read the [CONTRIBUTING.md](../CONTRIBUTING.md) document
 - [ ] I formatted my changes with [black](https://github.com/psf/black)
-- [ ] I linted my changes with [flake8](https://gitlab.com/pycqa/flake8)
+- [ ] I linted my changes with [flake8](https://github.com/PyCQA/flake8)
 - [ ] I have added documentation regarding my changes where necessary
 - [ ] Any pre-existing tests continue to pass
 - [ ] Additional tests were made covering my changes

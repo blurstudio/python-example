@@ -1,4 +1,5 @@
 from click.testing import CliRunner
+
 from blur_python_example.cli import echo_message
 
 
