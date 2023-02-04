@@ -1,5 +1,7 @@
 *.egg-info
 *.pyc
+*.sublime-project
+*.sublime-workspace
 *.swp
 .coverage
 .DS_Store
@@ -13,3 +15,4 @@ dist/
 htmlcov/
 venv/
 version.py
+shared-venv
