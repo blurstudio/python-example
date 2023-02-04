@@ -29,11 +29,17 @@ jobs:
 
 
   test:
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        python: [2.7, 3.6, 3.7, 3.8, 3.9]
+        os: ['ubuntu-latest']
+        python: [2.7, 3.7, 3.8, 3.9]
+        # Works around the depreciation of python 3.6 for ubuntu
+        # https://github.com/actions/setup-python/issues/544
+        include:
+          - os: 'ubuntu-20.04'
+            python: 3.6
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
